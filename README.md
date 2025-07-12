@@ -16,6 +16,7 @@ basic assets management
 
 ## Bash
 
+```bash
 php artisan make:model Region -mcs
 php artisan make:model Township -mcs
 php artisan make:model BankType -mcs
@@ -27,3 +28,4 @@ php artisan make:model Land -mcs
 php artisan make:controller Api/V1/BankApiController
 php artisan make:controller Api/V1/AssetApiController
 php artisan make:controller Api/V1/LandApiController
+```
