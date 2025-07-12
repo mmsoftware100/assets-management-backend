@@ -12,7 +12,7 @@ class AssetApiController extends Controller
 
     public function index()
     {
-        $assets = Asset::all();
+        $assets = Asset::with(['bank'])->get();
         // add pagination info
 
         return response()->json([

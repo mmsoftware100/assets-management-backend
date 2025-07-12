@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\V1\AssetApiController;
 use App\Http\Controllers\Api\V1\BankApiController;
 use App\Http\Controllers\Api\V1\LandApiController;
+use App\Http\Controllers\Api\V1\MasterApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,4 +29,5 @@ Route::prefix('v1')->group(function () {
     Route::get('/banks', [BankApiController::class, 'index']);
     Route::get('/assets', [AssetApiController::class, 'index']);
     Route::get('/lands', [LandApiController::class, 'index']);
+    Route::get('/master', [MasterApiController::class, 'index']);
 });

@@ -28,4 +28,5 @@ php artisan make:model Land -mcs
 php artisan make:controller Api/V1/BankApiController
 php artisan make:controller Api/V1/AssetApiController
 php artisan make:controller Api/V1/LandApiController
+php artisan make:controller Api/V1/MasterApiController
 ```

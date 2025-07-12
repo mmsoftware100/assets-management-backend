@@ -11,7 +11,7 @@ class LandApiController extends Controller
     
     public function index()
     {
-        $lands = Land::all();
+        $lands = Land::with(['region', 'township'])->get();
         // add pagination info
 
         return response()->json([
