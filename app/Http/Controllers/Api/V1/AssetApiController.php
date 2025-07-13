@@ -193,5 +193,46 @@ class AssetApiController extends Controller
             ], 500);
         }
     }
+    
+    /**
+     * Transfer multiple assets to a new bank.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function transfer(Request $request)
+    {
+        try {
+            // Validate the request data
+            $validatedData = $request->validate([
+                'bank_id' => ['required', 'integer', 'exists:banks,id'],
+                'assets' => ['required', 'array'], // Ensure it's an array
+                'assets.*' => ['integer', 'exists:assets,id'], // Each element in the array must be an existing asset ID
+            ]);
+
+            $newBankId = $validatedData['bank_id'];
+            $assetIdsToTransfer = $validatedData['assets'];
+
+            // Update assets' bank_id to the validated bank id
+            // You can use a single update query for efficiency
+            Asset::whereIn('id', $assetIdsToTransfer)->update(['bank_id' => $newBankId]);
+
+            return response()->json([
+                'message' => 'Assets transferred successfully',
+                'transferred_count' => count($assetIdsToTransfer)
+            ], 200); // 200 OK
+        } catch (ValidationException $e) {
+            return response()->json([
+                'message' => 'Validation Error',
+                'errors' => $e->errors()
+            ], 422); // 422 Unprocessable Entity
+        } catch (\Exception $e) {
+            return response()->json([
+                'message' => 'An error occurred while transferring the assets.',
+                'error' => $e->getMessage()
+            ], 500); // 500 Internal Server Error
+        }
+    }
+    
 
 }

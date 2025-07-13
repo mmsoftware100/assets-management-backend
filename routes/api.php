@@ -86,6 +86,7 @@ Route::prefix('v1')->group(function () {
     Route::get('/assets/{id}', [AssetApiController::class, 'show'])->name('assets.show');
     Route::put('/assets/{id}', [AssetApiController::class, 'update'])->name('assets.update');
     Route::delete('/assets/{id}', [AssetApiController::class, 'destroy'])->name('assets.destroy');
+    Route::post('/assets/transfer', [AssetApiController::class, 'transfer'])->name('assets.transfer');
 
     Route::get('/lands', [LandApiController::class, 'index']);
     Route::post('/lands', [LandApiController::class, 'store'])->name('lands.store');
