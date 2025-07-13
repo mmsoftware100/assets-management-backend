@@ -81,13 +81,13 @@ Route::prefix('v1')->group(function () {
     Route::put('/banks/{id}', [BankApiController::class, 'update'])->name('banks.update');
     Route::delete('/banks/{id}', [BankApiController::class, 'destroy'])->name('banks.destroy');
 
-    Route::get('/assets', [AssetApiController::class, 'assets.index']);
+    Route::get('/assets', [AssetApiController::class, 'index']);
     Route::post('/assets', [AssetApiController::class, 'store'])->name('assets.store');
     Route::get('/assets/{id}', [AssetApiController::class, 'show'])->name('assets.show');
     Route::put('/assets/{id}', [AssetApiController::class, 'update'])->name('assets.update');
     Route::delete('/assets/{id}', [AssetApiController::class, 'destroy'])->name('assets.destroy');
 
-    Route::get('/lands', [LandApiController::class, 'lands.index']);
+    Route::get('/lands', [LandApiController::class, 'index']);
     Route::post('/lands', [LandApiController::class, 'store'])->name('lands.store');
     Route::get('/lands/{id}', [LandApiController::class, 'show'])->name('lands.show');
     Route::put('/lands/{id}', [LandApiController::class, 'update'])->name('lands.update');
