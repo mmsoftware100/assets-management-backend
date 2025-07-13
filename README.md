@@ -30,3 +30,10 @@ php artisan make:controller Api/V1/AssetApiController
 php artisan make:controller Api/V1/LandApiController
 php artisan make:controller Api/V1/MasterApiController
 ```
+
+## Prompts
+
+
+give migration, model and api controller
+
+add CRUD methods in api controller with proper request validation in one page 
