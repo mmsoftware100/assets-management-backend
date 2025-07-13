@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Bank extends Model
 {
@@ -47,5 +48,10 @@ class Bank extends Model
     public function bankType(): BelongsTo
     {
         return $this->belongsTo(BankType::class); // Assuming you have a BankType model
+    }
+
+    public function assets(): HasMany
+    {
+        return $this->hasMany(Asset::class); // Assuming you have an Asset model
     }
 }

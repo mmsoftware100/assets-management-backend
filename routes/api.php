@@ -75,7 +75,7 @@ Route::prefix('v1')->group(function () {
     Route::get('/lands', [LandApiController::class, 'index']);
     Route::get('/master', [MasterApiController::class, 'index']);
 
-    Route::get('/banks', [BankApiController::class, 'banks.index']);
+    Route::get('/banks', [BankApiController::class, 'index']);
     Route::post('/banks', [BankApiController::class, 'store'])->name('banks.store');
     Route::get('/banks/{id}', [BankApiController::class, 'show'])->name('banks.show');
     Route::put('/banks/{id}', [BankApiController::class, 'update'])->name('banks.update');

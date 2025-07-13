@@ -19,7 +19,8 @@ class BankApiController extends Controller
 
     public function index()
     {
-        $banks = Bank::with(['region', 'township','bankType'])->get();
+        $banks = Bank::with(['region', 'township','bankType'])
+        ->withCount('assets')->get();
         // add pagination info
 
         return response()->json([
