@@ -26,13 +26,18 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix('v1')->group(function () {
     // Login Route
     Route::get('', [BankApiController::class, 'documentation']);
-    Route::get('/banks', [BankApiController::class, 'index']);
-    Route::get('/assets', [AssetApiController::class, 'index']);
     Route::get('/lands', [LandApiController::class, 'index']);
     Route::get('/master', [MasterApiController::class, 'index']);
 
+    Route::get('/banks', [BankApiController::class, 'index']);
     Route::post('banks', [BankApiController::class, 'store'])->name('banks.store');
     Route::get('banks/{id}', [BankApiController::class, 'show'])->name('banks.show'); 
     Route::put('banks/{id}', [BankApiController::class, 'update'])->name('banks.update');
     Route::delete('banks/{id}', [BankApiController::class, 'destroy'])->name('banks.destroy'); 
+
+    Route::get('/assets', [AssetApiController::class, 'index']);
+    Route::post('assets', [AssetApiController::class, 'store'])->name('assets.store');
+    Route::get('assets/{id}', [AssetApiController::class, 'show'])->name('assets.show'); 
+    Route::put('assets/{id}', [AssetApiController::class, 'update'])->name('assets.update');
+    Route::delete('assets/{id}', [AssetApiController::class, 'destroy'])->name('assets.destroy'); 
 });
