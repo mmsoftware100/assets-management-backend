@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
+use App\Models\Bank;
 use App\Models\BankType;
 use App\Models\Region;
 use App\Models\Township;
@@ -15,11 +16,13 @@ class MasterApiController extends Controller
         $regions = Region::all();
         $townships = Township::all();
         $bankTypes = BankType::all();
+        $banks = Bank::all();
 
         $data = [
             'regions' => $regions,
             'townships' => $townships,
             'bank_types' => $bankTypes,
+            'banks' => $banks,
         ];
         // add pagination info
 
