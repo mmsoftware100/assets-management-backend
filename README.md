@@ -42,3 +42,11 @@ add CRUD methods in api controller with proper request validation in one page
 ## 2025-07-13 api integration with next
 
 - [ ] prepare auth endponts sign-in and me
+
+
+## 2025-07-14 , data seeder for ready made 
+
+
+- [ ] 4 regions ရန်ကုန် နေပြည်တော် မန်းလေး တောင်ကြီး
+- [ ] 8 townships , two for each region
+- [ ] one bank on each township 

@@ -17,6 +17,7 @@ class RegionSeeder extends Seeder
             ['id'=>1, 'name' => 'နေပြည်တော်'],
             ['id'=>2,'name' => 'ရန်ကုန်'],
             ['id'=>3,'name' => 'မန္တလေး'],
+            ['id'=>4,'name' => 'တောင်ကြီး'],
         ];
 
         // insert regions into the database
