@@ -37,3 +37,8 @@ php artisan make:controller Api/V1/MasterApiController
 give migration, model and api controller
 
 add CRUD methods in api controller with proper request validation in one page 
+
+
+## 2025-07-13 api integration with next
+
+- [ ] prepare auth endponts sign-in and me
