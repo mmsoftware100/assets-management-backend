@@ -52,7 +52,7 @@ class AssetApiController extends Controller
                 'storage_device_name' => ['nullable', 'string', 'max:255'],
                 'monitor_name' => ['nullable', 'string', 'max:255'],
                 'multi_media_name' => ['nullable', 'string', 'max:255'],
-                'number_name' => ['nullable', 'string', 'max:255'],
+                'number_name' => ['nullable'],
                 'price_name' => ['nullable', 'string', 'max:255'],
                 'condition_name' => ['nullable', 'string', 'max:255'],
                 'budget_year_name' => ['nullable', 'string', 'max:255'],
