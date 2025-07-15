@@ -42,8 +42,8 @@ class AssetSeeder extends Seeder
         for ($i = 0; $i < 20; $i++) {
             Asset::create([
                 'bank_id' => $faker->randomElement($bankIds),
-                'ministry_name' => $faker->randomElement(['Ministry of Finance', 'Ministry of Planning', 'Ministry of Education', 'Ministry of Health', null]),
-                'department_name' => $faker->randomElement(['General Administration Department', 'Revenue Department', 'IT Department', 'Human Resources', null]),
+                'ministry_name' => $faker->randomElement(['Ministry of Finance and Planning']),
+                'department_name' => $faker->randomElement(['MEB']),
                 'machine_name' => $faker->randomElement(['Server', 'Desktop PC', 'Laptop', 'Printer', 'Network Switch', 'UPS']),
                 'department_no' => $faker->unique()->regexify('[A-Z]{3}-[0-9]{3}'), // e.g., 'NEC-57'
                 'brand_name' => $faker->randomElement(['HPE', 'Dell', 'HP', 'Lenovo', 'Cisco', 'Epson', 'APC']),
