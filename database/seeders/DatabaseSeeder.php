@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             AssetSeeder::class,
             // LandSeeder::class,
             LandSeeder2::class,
+            BankSeeder2::class,
         ]);
 
     }
